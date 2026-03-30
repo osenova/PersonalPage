@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petya Osenova</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        background-color: #f5f5f5;
+    }
+
+    .container {
+        display: flex;
+        min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 260px;
+        background-color: #2c3e50;
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .sidebar img {
+        width: 140px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .sidebar h2 {
+        margin: 10px 0 20px 0;
+        font-weight: normal;
+    }
+
+    .nav-button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin: 6px 0;
+        background-color: #34495e;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-family: Georgia, serif;
+        font-size: 16px;
+    }
+
+    .nav-button:hover {
+        background-color: #1abc9c;
+    }
+
+    /* Content */
+    .content {
+        flex: 1;
+        padding: 40px;
+        background-color: white;
+        position: relative;
+    }
+
+    #last_updated {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        font-size: 14px;
+        color: #555;
+        opacity: 0.7;
+        font-style: italic;
+    }
+
+    .section {
+        display: none;
+        /* max-width: 800px; */
+    }
+
+    .active {
+        display: block;
+    }
+
+    h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+    }
+
+    ul {
+        line-height: 1.8;
+    }
+
+    /* MOBILE VIEW */
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .sidebar {
+            width: 100%;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        body {
+            font-size: 18px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <img src="petya-petya.jpg" alt="Profile Photo">
+        <h2>Petya Osenova</h2>
+
+        <button class="nav-button" onclick="showSection('bio')">Short Bio</button>
+        <button class="nav-button" onclick="showSection('current')">Current Activities</button>
+        <button class="nav-button" onclick="showSection('past')">Past Activities</button>
+        <button class="nav-button" onclick="showSection('publications')">Publications</button>
+        <button class="nav-button" onclick="showSection('contact')">Contact</button>
+    </div>
+
+    <div class="content">
+        <div id="bio" class="section active">
+            <h1>Short Bio</h1>
+            <p>
+                I am professor in Contemporary Bulgarian Grammar (morphology, syntax and corpus linguistics) in the Faculty of Slavic Studies at Sofia University “St. Kl. Ohridski” and senior researcher in the area of Language Technologies in the Department of AI and Language Technologies at the Institute of Information and Communication Technologies, Bulgarian Academy of Sciences. My scientific interests are in the fields of formal and computational linguistics, language resources, grammar-dictionary interface.
+            </p>
+            <p>
+                I was a key person in a number of EU projects, related to eLearning, Machine Translation, Language resources (EuroMatrixPlus, AsIsKnown, LTfLL, QTLeap, EUCases, among others). I am the responsible person for the language resources in CLaDA-BG – the CLARIN and DARIAH joint framework in Bulgaria. 
+            </p>
+            <p>
+                I specialized in computational linguistics as a postdoctoral fellow in the Tuebingen University, Germany (2003) - working on the BulTreeBank project, and in Groningen University, the Netherlands (2004) - working on measuring Bulgarian dialects; as a Fulbrighter at Stanford University, the USA (2010) - working on a resource grammar for Bulgarian. I have more than 150 publications in conference proceedings and scientific journals (among which refereed and with SJR factor).
+            </p>
+            <p>
+                In 2018 I was humbled to receive the award of Clarivate Analytics for excellence in social science research in South-Eastern Europe.
+            </p>
+        </div>
+
+        <div id="current" class="section">
+            <h1>Current Activities</h1>
+            <ul>
+                <li>I am a chair of the <a href="https://www.clarin.eu/governance/user-involvement-committee">User Involvement Committee</a> at CLARIN ERIC (2026 ongoing)</li>
+                <li>I am an editor at the <a href="https://langsci-press.org/catalog/series/pmwe">Phraseology and Multiword Expressions series</a> at the Language Science Press (2024 ongoing)</li>
+                <li>I am a member of the <a href="https://globalwordnet.github.io/about-gwa/the-board">Global Wordnet Association Board</a> (2025 ongoing)</li>
+                <li>I am the principal investigator for the Bulgarian team in the <a href="https://data.snf.ch/grants/grant/230816">TRAI project</a> - Exploring the Triad of Academic Writing, Critical Thinking and AI Literacy: Interdisciplinary Perspectives on Undergraduate Thesis Writing  (2025 - 2029)</li>
+                <li>I am the coordinator of the <a href="https://www.clarin.eu/pressmint">PressMint project</a>: Interoperable Corpora of Historical Newspapers (2025 - 2027)</li>
+                <li>I am the coordinator of the Bulgarian team in the <a href="https://clarinsi.github.io/parlacap/">ParlaCAP project</a> - Comparing agenda settings across parliaments via the ParlaMint dataset (2025 - 2027)</li>
+                <li>I am a member of the national project <a href="https://historicalsofia.eu/en/">Semantic and 3D technologies for the history of streets and buildings in Sofia</a></li>
+                <li>I am member of the editorial teams of three Bulgarian journals:
+                    <ul>
+                        <li><a href="https://contrastive-ling.slav.uni-sofia.bg/en/about-the-journal/">Contrastive Linguistics</a></li>
+                        <li><a href="https://bel.azbuki.bg/en/bel/redakcionna-kolegia/">Bulgarian Language and Literature</a></li>
+                        <li><a href="https://literaturata.slav.uni-sofia.bg/en/editors/">The Literature</a></li>
+                    </ul>
+                </li>
+                <li>I am a MC in the following COST Actions::
+                    <ul>
+                        <li><a href="https://unidive.lisn.upsaclay.fr/doku.php?id=start">UniDive</a> COST Action CA21167 (2022 - 2026)</li>
+                        <li><a href="https://goblin-cost.eu/">GOBLIN</a> COST Action CA23147 (2024 - 2028)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="past" class="section">
+            <h1>Past Activities</h1>
+            I served as a member of the following organizations:
+            <ul>
+                <li><a href="http://multiword.sourceforge.net/PHITE.php?sitesig=MWE">SIGLEX-MWE Standing Committee</a> (2019-2021)</li>
+                <li><a href="http://www.folli.info/?page_id=45">ESSLLI Standing Committee</a> (since 2018)</li>
+                <li><a href="http://www.elra.info/en/about/association/elra-board/">ELRA Board</a> (2018-2024)</li>
+            </ul>
+            I participated in the following recent projects and COST Actions:
+            <ul>
+                <li><a href="https://www.clarin.eu/content/parlamint-towards-comparable-parliamentary-corpora">ParlaMint Project</a> (2020 – 2024) - co-coordinator</li>
+                <li>CA18209 <a href="https://www.cost.eu/actions/CA18209/#tabs|Name:overview">European network for Web-centred linguistic data science – Nexuslinguarum</a> (MC)</li>
+                <li>CA18231 <a href="https://www.cost.eu/actions/CA18231/#tabs|Name:overview">Multi3Generation: Multi-task, Multilingual, Multi-modal</a> (MC)</li>
+                <li>CA19102 <a href="http://www.lithme.eu/">Language in the Human-Machine Era</a> (MC)</li>
+            </ul>
+        </div>
+
+        <div id="publications" class="section">
+            <h1>Publications</h1>
+            <h3>Monographs</h3>
+            <ul>
+                <li>Петя Осенова 2016: Граматическо моделиране на българския език (с оглед на обработката на естествен език). София, изд. „Парадигма”.</li>
+                <li>Петя Осенова 2009: Именните фрази в българския език. София. Издателство “Ето”. 187 стр.</li>
+                <li>Петя Осенова и Кирил Симов 2007: Формална граматика на българския език. ИПОИ, БАН. 140 стр.</li>
+            </ul>
+            <h3>2025</h3>
+            <ul>
+                <li>Петя Осенова 2025: Граматически условия за нереализиране на характеристиката pluralia tantum при някои типично плурални глаголи в българския език. В: Български език, Приложение / BULGARIAN LANGUAGE, SUPPLEMENT, 72 (2025), стр. 81–88, Print ISSN: 0005-4283, Online ISSN: 2603-3372, doi: 10.47810/BL.72.25.PR.06</li>
+                <li>Петя Осенова 2025: Трудната валентност. В: Сборник Международната научна конференция "ЕДИНСТВО И РАЗДЕЛЕНИЕ В ЕЗИЦИТЕ,  ЛИТЕРАТУРИТЕ И КУЛТУРИТЕ", СУ „Св. Климент Охридски“, Факултет по славянски филологии, 9–11 май 2023. София. Университетско издателство „Св. Климент Охридски, Дарина Младенова, Диана Атанасова, Катерина Войнова, Лилия Трифонова, Мария Маринова, Николай Папучиев, Франческа Земярска (съставители), стр. 42-49.  ISBN 978-619-7785-09-8 (твърда подвързия), ISBN 978-619-7785-10-4 (pdf)</li>
+                <li>Osenova, P. (2025). Metaphors of the pandemic through the lenses of the Bulgarian parliament. Slavia Meridionalis, Issue 25: Language of Politics, Language in Politics, Article 3509. <a href="https://doi.org/10.11649/sm.3509">https://doi.org/10.11649/sm.3509</a> (editors-in-Charge of the issue: Nelly Tincheva, Alexandra Bagasheva)</li>
+                <li>Simov, K., Paev, N., Osenova, P., and Marinov, S. 2025: Bulgarian Event Extraction with LLMs. In: Proceedings of the 15th International Conference on Recent Advances in Natural Language Processing - Natural Language Processing in the Generative AI era, pp. 1163-1171, <a href="https://aclanthology.org/2025.ranlp-1.134">https://aclanthology.org/2025.ranlp-1.134</a></li>
+                <li>Nikolay Paev, Kiril Simov, and Petya Osenova. 2025. Word Sense Disambiguation with Large Language Models: Casing Bulgarian. In Proceedings of the 13th Global Wordnet Conference, pages 171–178, Pavia, Italy. Global Wordnet Association, editors: Chiara Zanchi, Luca Brigada Villa, Erica Biagetti, Alexandre Rademaker, Francis Bond, German Rigau, dpi: 10.18653/v1/2025.gwc-1.20</li>
+                <li>Осенова, П. 2025: ГРАМАТИКАТА ОТСТЪПВА ПРЕД ПРАГМАТИКАТА (НАБЛЮДЕНИЯ ВЪРХУ БЪЛГАРСКИЯ ЕЗИК). В: Зборник Матице српске за славистику, свеска 108, стр. 97-110. <a href="https://doi.org/10.18485/ms_zmss.2025.108.6">https://doi.org/10.18485/ms_zmss.2025.108.6</a></li>
+                <li>Осенова, П., Симов, К. 2025: НЯКОИ ПРЕДИЗВИКАТЕЛСТВА ПРИ МОДЕЛИРАНЕ НА ЧАСТИТЕ НА РЕЧТА В БЪЛГАРСКИЯ ЕЗИК. В: Отговорността пред езика, книга 11. Сборник, посветен на 65-годишнината на проф. д-р Велка Попова, УИ „Епископ Константин Преславски“, Шумен, стр. 178-183. ISSN 1313-695X (Print), ISSN 2815-4312 (Online)</li>
+                <li>Osenova, P. 2025: ON SOME IDIOSYNCRATIC VALENCIES: EVIDENCE FROM ENGLISH AND BULGARIAN. In: Prace Filologiczne 2025 (80): pp. 217–230, ISSN 0138-0567; e-ISSN 2720-5037.</li>
+                <li>Osenova 2025: Contemporary Bulgarian Grammar and Some Context-related Usage Features. In:, Padareva Ilieva, G., Mitsova, S., & Dick Smakman, D. (Eds.). The Sociophonetics of Bulgarian /l/. Journal Of Global Sociolinguistics, 1(2), 1-71. Retrieved from <a href="https://hdl.handle.net/1887/4290851">https://hdl.handle.net/1887/4290851</a>, pp.1-7.</li>
+            </ul>
+            <h3>2024</h3>
+            <ul>
+                <li>Miok et al. 2024: Miok, Kristian, Hidalgo Tenorio, Encarnación, Osenova, Petya, Benítez-Castro, Miguel-Ángel, Robnik-Šikonja, Marko. Multi-aspect multilingual and cross-lingual parliamentary speech analysis. In: Intelligent Data Analysis, vol. 28, no. 1, pp. 239-260. DOI: 10.3233/IDA-227347</li>
+                <li>Mititelu, Verginica Barbu, Voula Giouli, Kilian Evang, Daniel Zeman, Petya Osenova, Carole Tiberius, Simon Krek et al. Multiword Expressions between the Corpus and the Lexicon: Universality, Idiosyncrasy, and the Lexicon-Corpus Interface. In Proceedings of the Joint Workshop on Multiword Expressions and Universal Dependencies (MWE-UD), LREC-COLING 2024, pp. 147-153. 2024.</li>
+                <li>Petya Osenova and Kiril Simov. 2024. Bulgarian ParlaMint 4.0 corpus as a testset for Part-of-speech tagging and Named Entity Recognition. In Proceedings of the IV Workshop on Creating, Analysing, and Increasing Accessibility of Parliamentary Corpora (ParlaCLARIN) @ LREC-COLING 2024, pages 30–35, Torino, Italia. ELRA and ICCL.</li>
+                <li>Petya Osenova and Kiril Simov. 2024. Representation of multiword expressions in the Bulgarian integrated lexicon for language technology. In Voula Giouli and Verginica Barbu Mititelu (eds.), Multiword expressions in lexical resources: Linguistic, lexicographic, and computational perspectives, 117–146. Berlin: Language Science Press. DOI: 10.5281/zenodo.10998637</li>
+                <li>Осенова 2024: Петя Осенова. Някои особености на глаголите в неопределеноличните изречения. - В: Коева, Светла, Христина Дейкова, Максим Стаменов (съст.). Доклади от Международната годишна конференция на Института за български език „Проф. Любомир Андрейчин“ (София, 2024 година). София: Институт за български език „Проф. Любомир Андрейчин“, 2024. ISSN 2683-1198 (online), стр. 28 - 35.</li>
+                <li>LaTerza, I., P. Osenova, and B. Karapejovski. “Binding in South Slavic and DP: A Data-Driven Approach”. Journal of Slavic Linguistics, vol. 31, no. 1-2, Dec. 2023, pp. 133-59, <a href="https://ojs.ung.si/index.php/JSL/article/view/124">https://ojs.ung.si/index.php/JSL/article/view/124</a>. (published in 2024)</li>
+                <li>Osenova and Simov 2024: Towards a Multimodal WordNet for Language Learning in Bulgarian. In: Digital Presentation and Preservation of Cultural and Scientific Heritage. Conference Proceedings. Vol. 14, Sofia, Bulgaria: Institute of Mathematics and Informatics – BAS, 2024, pp. 117-124. ISSN: 1314-4006, eISSN: 2535-0366, DOI: <a href="https://doi.org/10.55630/dipp.2024.14.10">https://doi.org/10.55630/dipp.2024.14.10</a></li>
+                <li>Petya Osenova and Kiril Simov 2024: All about words! An integrated dictionaries portal for Bulgarian. In: Despot, K. Š., Ostroški Anić, A., & Brač, I. (Eds.). Lexicography and Semantics. Proceedings of the XXI EURALEX International Congress. Institute for the Croatian Language, pp. 520-528.</li>
+                <li>Osenova 2024: On a Hurtlex resource for Bulgarian. In: Proceedings of the Sixth International Conference Computational Linguistics in Bulgaria (CLIB 2024), Institute for Bulgarian Language, Bulgarian Academy of Sciences, pp. 214-219, ISSN 2367 5675 (online).</li>
+                <li>Петя Осенова 2024: Лингвистичен профил на израза имам предвид в българския парламент. В: ПРОБЛЕМИ НА УСТНАТА КОМУНИКАЦИЯ, кн. 13, Велико Търново, УИ „Св. св. Кирил и Методий“, 2024, стр. 176-187, ISSN 2367-8712 (Print), ISSN 2738-8840 (Online). DOI: <a href="https://doi.org/10.54664/OMWP7451">https://doi.org/10.54664/OMWP7451</a></li>
+                <li>Петя Осенова и Кирил Симов 2024: Някои проблеми на лематизацията в българския език. В: Отговорността пред езика, книга 10. Сборник, посветен на 65-годишнината на проф. д-р Димитър Попов. УИ “Епископ Константин Преславски”, Шумен. ISSN (Print) 1313-695X, ISSN (Online) 2815-4312.</li>
+                <li>Nikolay Paev, Kiril Simov, and Petya Osenova. 2024. Introducing Shallow Syntactic Information within the Graph-based Dependency Parsing. In Proceedings of the 22nd Workshop on Treebanks and Linguistic Theories (TLT 2024), pages 46–54, Hamburg, Germany. Association for Computational Linguistics.</li>
+                <li>Петя Осенова 2024. Аргументна структура на глаголите за създаване в българския език. В: проф. д-р Йовка Тишева, проф. д.ф.н. Красимира Алексова, доц. д-р Марина Джонова, гл. ас. д-р Ласка Ласкова (съст.). Материали от Втората международна конференция „Българистични езиковедски четения“, 23–24 ноември 2023 г., посветена на 100-годишнината от рождението на проф. Мирослав Янакиев. стр. 227-236. София • 2024 Университетско издателство „Св. Климент Охридски“. ISBN 978-619-7785-06-7 (твърда корица), ISBN 978-619-7785-07-4 (pdf)</li>
+            </ul>
+            <h3>2023</h3>
+            <ul>
+                <li>Петя Осенова 2023: Частите на речта в инициативата за универсалните зависимости: статус и полемики. В: сп. Български език. Приложение, стр. 135-142. <a href="https://www.balgarskiezik.eu/p-2023.html">https://www.balgarskiezik.eu/p-2023.html</a></li>
+                <li>Kiril Simov and Petya Osenova. 2023. Recent Developments in BTB-WordNet. In Proceedings of the 12th Global Wordnet Conference, pages 220–227, University of the Basque Country, Donostia – San Sebastian, Basque Country. Global Wordnet Association.</li>
+                <li>Iva Marinova, Kiril Simov and Petya Osenova 2023: Transformer-Based Language Models for Bulgarian. In: Proceedings of Recent Advances in Natural Language Processing, pp. 712–720, Varna, Sep 4–6, 2023, <a href="https://doi.org/10.26615/978-954-452-092-2_077">https://doi.org/10.26615/978-954-452-092-2_077</a></li>
+                <li>Osenova, P. (2023). The Role of Language Technologies in Digital Humanities (The Case of Parliamentary Debates). Digital Presentation and Preservation of Cultural and Scientific Heritage, 13, 61–68. <a href="https://doi.org/10.55630/dipp.2023.13.5">https://doi.org/10.55630/dipp.2023.13.5</a></li>
+            </ul>
+            <h3>2022</h3>
+            <ul>
+                <li>Tomaž Erjavec, Maciej Ogrodniczuk, Petya Osenova, Nikola Ljubešić, Kiril Simov, Andrej Pančur, Michał Rudolf, Matyáš Kopp, Starkaður Barkarson ‪Steinþór Steingrímsson, Çağrı Çöltekin, Jesse de Does, Katrien Depuydt, Tommaso Agnoloni, Giulia Venturi, María Calzada Pérez, Luciana D. de Macedo, Costanza Navarretta, Giancarlo Luxardo, Matthew Coole, Paul Rayson, Vaidas Morkevičius, Tomas Krilavičius, Roberts Darģis, Orsolya Ring, Ruben van Heusden, Maarten Marx, and Darja Fišer. The ParlaMint corpora of parliamentary proceedings. Language Resources and Evaluation, 2022. Open access paper link: <a href="https://doi.org/10.1007/s10579-021-09574-0">https://doi.org/10.1007/s10579-021-09574-0</a></li>
+                <li>Алексова Красимира и Петя Осенова 2022: За граматическия статус на композитумите от типа „който ще да е“. В: Доклади от Международната годишна конференция на Института за български език „Проф. Любомир Андрейчин“ (София, 2022). Светла Коева, Максим Стаменов (съставители). София: Издателство на БАН „Проф. Марин Дринов“, 2022, стр. 92-101.  ISSN 2683-118Х (print). ISSN 2683-1198 (online)</li>
+                <li><a href="https://ibl.bas.bg/wp-content/uploads/2022/05/Proceedings-CONFIBL2022.pdf">https://ibl.bas.bg/wp-content/uploads/2022/05/Proceedings-CONFIBL2022.pdf</a></li>
+                <li>Maciej Ogrodniczuk, Petya Osenova, Tomaž Erjavec, Darja Fišer, Nikola Ljubešic, Çagrı Çöltekin, Matyáš Kopp and Meden Katja 2022: ParlaMint II: The Show Must Go On. In Proceedings from ParlaCLARIN III, Workshop on Creating, Enriching and Using Parliamentary Corpora, at LREC 2022, Darja Fiser, Maria Eskevich, Jakob Lenardic, Franciska de Jong (eds), pp. 1-6, ISBN: 979-10-95546-85-6, EAN: 9791095546856</li>
+                <li><a href="http://www.lrec-conf.org/proceedings/lrec2022/workshops/ParlaCLARINIII/pdf/2022.parlaclariniii-1.1.pdf">http://www.lrec-conf.org/proceedings/lrec2022/workshops/ParlaCLARINIII/pdf/2022.parlaclariniii-1.1.pdf</a></li>
+                <li>Osenova, Petya  and  Simov, Kiril  and  Marinova, Iva  and  Berbatova, Melania 2022: The Bulgarian Event Corpus: Overview and Initial NER Experiments. In: Proceedings of the Language Resources and Evaluation Conference, Marseille, France, European Language Resources Association, pp. 3491--3499</li>
+                <li><a href="https://aclanthology.org/2022.lrec-1.374">https://aclanthology.org/2022.lrec-1.374</a></li>
+                <li>Осенова 2022: Петя Осенова. ПАНДЕМИЯТА ОТ COVID-19 ВЪВ ВАЛЕНТНОСТТА НА СВОИТЕ ПРЕДИКАТИ: НАБЛЮДЕНИЯ ВЪРХУ СЪВРЕМЕНЕН КОРПУС ОТ ПАРЛАМЕНТАРНА РЕЧ. В: сп. БЪЛГАРСКИ ЕЗИК, ПРИЛОЖЕНИЕ / BULGARIAN LANGUAGE, SUPPLEMENT, 69 (2022), 113–121, Print ISSN: 0005-4283, Online ISSN: 2603-3372, doi: 10.47810/BL.69.22.PR.06 </li>
+                <li>Osenova 2022: Petya Osenova. Raising and Control Constructions in a Bulgarian UD Parsebank of Parliament Sessions. In: , pp. 68-74. In: Proceedings of the Fifth International Conference Computational Linguistics in Bulgaria (CLIB 2022), Bulgarian Academy of Sciences. 2367 5675 (online)</li>
+                <li><a href="https://dcl.bas.bg/clib/wp-content/uploads/2022/09/CLIB2022_PROCEEDINGS_v1.0.pdf">https://dcl.bas.bg/clib/wp-content/uploads/2022/09/CLIB2022_PROCEEDINGS_v1.0.pdf</a></li>
+                <li>Осенова 2022: Петя Осенова. Корпусен поглед към семантичните роли. В: Мултикултурализъм и многоезичие. Сборник с доклади От 13-ите международни славистични четения - София, 21-23 април 2016 г., том 3. Морфология, синтаксис, прагматика. Юбилейна научна сесия в чест на проф. дфн Р. Ницолова, стр. 427-433. УИ “Св. Кл. Охридски”, София.</li>
+            </ul>
+            <h3>2021</h3>
+            <ul>
+                <li>Tomaž Erjavec, Maciej Ogrodniczuk, Petya Osenova, Andrej Pančur, Nikola Ljubešić, Tommaso Agnoloni, Starkaður Barkarson, , María Calzada Pérez, Çağrı Çöltekin, Matthew Coole, Roberts Dargis, Luciana D. de Macedo, Jesse de Does, Katrien Depuydt, Sascha Diwersy, Dorte Haltrup Hansen, Matyáš Kopp, Tomas Krilavičius, Giancarlo Luxardo, Maarten Marx, Vaidas Morkevičius, Costanza Navarretta, Paul Rayson, Orsolya Ring, Michał Rudolf, Kiril Simov, Steinþór Steingrímsson, István Üveges, Ruben van Heusden, Giulia Venturi 2021: ParlaMint: Comparable Corpora of European Parliamentary Data. In: Proceedings of CLARIN Annual Conference 2021. Eds. M. Monachini and M. Eskevich. Virtual Edition, 2021, pp. 20-25.</li>
+                <li>Осенова 2021: П. Осенова. Метафорите на пандемията в българската парламентарна реч: корпусно изследване. В: Лингвистични проблеми, година II, кн. 2, Научни текстове от Юбилейната международна научна конференция „Филологията – традиция и предизвикателства в новата реалност“ (7-9 октомври 2021 г.) По повод 30-годишнината от създаването на Филологическия факултет при Югозападния университет „Неофит Рилски“, Университетско издателство „Неофит Рилски“ – Благоевград, стр. 279-286. ISSN: 2682-9673</li>
+                <li>Осенова 2021: П. Осенова. Хипотезата предложна фраза при българския подлог. В: Известия на института за български език „Проф. Любомир Андрейчин“, том XXXIV, стр. 175-189, 10.7546/PIBL.XXXIV.21.07,</li>
+                <li><a href="https://ibl.bas.bg/izvestiya/wp-content/uploads/2021/11/07_Osenova_2021_IIBE-XXXIV_175-189.pdf">https://ibl.bas.bg/izvestiya/wp-content/uploads/2021/11/07_Osenova_2021_IIBE-XXXIV_175-189.pdf</a></li>       
+            </ul>
+            <h3>2020</h3>
+            <ul>
+                <li>Sina Ahmadi, John Philip McCrae, Sanni Nimb, Fahad Khan, Monica Monachini, Bolette Pedersen, Thierry Declerck, Tanja Wissik, Andrea Bellandi, Irene Pisani, Thomas Troelsgård, Sussi Olsen, Simon Krek, Veronika Lipp, Tamás Váradi, László Simon, András Gyorffy, Carole Tiberius, Tanneke Schoonheim, Yifat Ben Moshe, Maya Rudich, Raya Abu Ahmad, Dorielle Lonke, Kira Kovalenko, Margit Langemets, Jelena Kallas, Oksana Dereza, Theodorus Fransen, David Cillessen, David Lindemann, Mikel Alonso, Ana Salgado, José Luis Sancho, Rafael-J. Ureña-Ruiz, Jordi Porta Zamorano, Kiril Simov, Petya Osenova, Zara Kancheva, Ivaylo Radev, Ranka Stanković, Andrej Perdih and Dejan Gabrovsek 2020: A Multilingual Evaluation Dataset for Monolingual Word Sense Alignment. In: Proceedings of The 12th Language Resources and Evaluation Conference, Marseille, France, pp. 3225-3235. (<a href="http://www.lrec-conf.org/proceedings/lrec2020/pdf/2020.lrec-1.394.pdf">http://www.lrec-conf.org/proceedings/lrec2020/pdf/2020.lrec-1.394.pdf</a>)</li>
+                <li>Iva Marinova, Laska Laskova, Petya Osenova, Kiril Simov and Alexander Popov 2020: Reconstructing NER Corpora: a Case Study on Bulgarian. In: Proceedings of The 12th Language Resources and Evaluation Conference. Marseille, France, pp. 4649-4654. (<a href="http://www.lrec-conf.org/proceedings/lrec2020/pdf/2020.lrec-1.571.pdf">http://www.lrec-conf.org/proceedings/lrec2020/pdf/2020.lrec-1.571.pdf</a>)</li>
+                <li>Осенова, П. 2020: За начините на маркиране и изразяване на комплементите в българския език. В: отв. ред. Е. Ю. Иванова, З. К. Шанова, XXV Державинские чтения cовременные и исторические проблемы болгаристики и славистики. Сборник статей по материалам XLIX международной филологической конференции, посвященной памяти Людмилы Алексеевны Вербицкой (1936–2019), ВВМ, Санкт-Петербург, ISBN 978-5-9651-0609-7, стр. 54 - 61.</li>
+                <li>Dimitrova, T. and Osenova, P. 2020: Tagging Historic Bulgarian Texts: Experiments and Challenges. В: отв. ред. Е. Ю. Иванова, З. К. Шанова, XXV Державинские чтения cовременные и исторические проблемы болгаристики и славистики. Сборник статей по материалам XLIX международной филологической конференции, посвященной памяти Людмилы Алексеевны Вербицкой (1936–2019), ВВМ, Санкт-Петербург, ISBN 978-5-9651-0609-7, pp. 61 - 65.</li>
+                <li>Osenova, P. 2020: On the Valency Frames of type Subject-Predicate in Bulgarian. In: Proceedings of CLIB 2020, pp. 24-30, 2367 5675 (online).</li>
+                <li>Osenova and Simov 2020: Integrated Language and Knowledge Resources for CLaDA-BG. In: Selected papers from the CLARIN Annual Conference 2019. Linköping Electronic Conference Proceedings 172: 137–144.</li>
+                <li>Ljubešic et al. 2020: Nikola Ljubešic, Petya Osenova, Tomaž Erjavec and Kiril Simov. The CLASSLA Knowledge Centre for South Slavic Languages. In Proceedings of CLARIN Annual Conference 2020. Eds. C. Navarretta and M. Eskevich. Virtual Edition, 2020. pp. 23-26.</li>
+                <li>Laskova, Osenova and Simov 2020: Laska Laskova, Petya Osenova and Kiril Simov. Towards an Interdisciplinary Annotation Framework: Combining NLP and Expertise in Humanities. In Proceedings of CLARIN Annual Conference 2020. Eds. C. Navarretta and M. Eskevich. Virtual Edition, 2020. pp. 141-145.</li>
+                <li>Popov, A., Osenova, P.  and Simov, K. 2020: Implementing an End-to-End Treebank-Informed Pipeline for Bulgarian. In: Proceedings of the 19th International Workshop on Treebanks and Linguistic Theories, 27-28 Oct, 2020, Düsseldorf, Germany, Association for Computational Linguistics, pp. 162–167.</li>
+                <li>Alzetta et al. 2020: Chiara Alzetta, Felice Dell'Orletta, Simonetta Montemagni, Petya Osenova, Kiril Simov, Giulia Venturi. Quantitative Linguistic Investigations across Universal Dependencies Treebanks. In: Johanna Monti, Felice Dell'Orletta, Fabio Tamburini (eds.), Proceedings of the Seventh Italian Conference on Computational Linguistics, Bologna, Italy, March 1-3, 2021. CEUR Workshop Proceedings, Vol-2769, ISSN 1613-0073, online: <a href="http://ceur-ws.org/Vol-2769/">http://ceur-ws.org/Vol-2769/</a></li>
+                <li>Елена Иванова и Петя Осенова 2020: Българските еди-местоимения и техните съответствия на руски език. В: сп. Чуждоезиково обучение, том 47, бр. 6, стр. 567-577.   </li>
+            </ul>
+            <h3>2019</h3>
+            <ul>
+                <li>Петя Осенова 2019: Типове несъгласуване между подлога и сказуемото в българския език. В: AUT INVENIAM VIAM, AUT FACIAM. Сборник в чест на чл.-кор. Проф. д.ф.н. Стоян Буров. В. Търново, стр. 202-209. ISBN 978-619-208-188-1.</li>
+                <li>Kiril Simov, Petya Osenova, Laska Laskova, Ivajlo Radev, Zara Kancheva 2019: Aligning the Bulgarian BTB WordNet with the Bulgarian Wikipedia. In: Fellbaum, Christiane and Vossen, Piek and Rudnicka, Ewa and Maziarz, Marek and Piasecki, Maciej (eds) Proceedings of the Tenth Global Wordnet Conference, pp. 290-297. ISBN 978-83-7493-108-3</li>
+                <li>Laska Laskova, Petya Osenova, Kiril Simov, Ivajlo Radev, Zara Kancheva 2019: Modeling MWEs in BTB-WN. In Agata Savary, Carla Parra Escartín, Francis Bond, Jelena Mitrović, Verginica Barbu Mititelu (eds.) Proceedings of the Joint Workshop on Multiword Expressions and WordNet (MWE-WN 2019). Association for Computational Linguistics, pp. 70-78. ISBN 978-1-950737-26-0</li>
+                <li>Petya Osenova, Kiril Simov 2019: Towards transferring Bulgarian Sentences with Elliptical Elements to Universal Dependencies: issues and strategies. In: Proceedings of the Third Workshop on Universal Dependencies (UDW, SyntaxFest 2019), Association for Computational Linguistics, pp. 116-123, DOI 10.18653/v1/W19-8014</li>
+                <li>Петя Осенова 2019: Непрототипните подлози в българския език. В: доц. д-р Цветанка Аврамова (отг. ред.) Стереотипът в славянските езици, литератури и култури. Сборник с доклади от Четиринадесетите международни славистични четения София, 26–28 април 2018 г.Том първи. Езикознание. УИ „Св. Климент Охридски“, стр. 653-658. ISBN 978-954-07-4883-2.</li>
+                <li>Петя Осенова 2019: Параметри на нулевата субектност в българския език. В: сп. Лингвистични проблеми, том 1, бр. 1, стр. 173-180. ISSN 2682-9673</li>
+                <li>Петя Осенова 2019: Поведението на именните групи за приблизителност от типа ‘над 300 души’ или ‘около 15 села’ в позиция на подлог. В: Красимира Алексова (съставител); Йовка Тишева, Марина Джонова (научни редактори) Българистични езиковедски четения: Материали от международната конференция по случай 130-годишнината на Софийския университет "Св. Климент Охридски", 19-20 ноември 2018, стр. 280-286. ФСФ, 978-619-7433-31-9</li>
+                <li>Петя Осенова 2019: Явни и неявни връзки при моделиране на синтактичните отношения. В: сп. Български език. Приложение, стр. 93-100. ISSN (print) 0005-4283.</li>
+                <li>Popov, A., Koprinkova-Hristova, P., Simov, K., Osenova, P. 2019: Echo State vs. LSTM Networks for Word Sense Disambiguation. Lecture Notes in Computer Science, 11731, Springer Verlag, 2019, ISBN:978-303030492-8, ISSN:03029743, DOI:10.1007/978-3-030-30493-5_10, 94-109. SJR (Scopus):0.283</li>
+                <li>Simov, K., Koprinkova-Hristova, P., Popov, A., Osenova, P. 2019: Word Embeddings Improvement via Echo State Networks. 2019 IEEE International Symposium on INnovations in Intelligent SysTems and Applications (INISTA), IEEE, 2019, ISBN:978-1-7281-1862-8, DOI:10.1109/INISTA.2019.8778297, INSPEC No-18869161</li>
+                <li>Simeonova, L., Simov, K., Osenova, P., Nakov, P. 2019: A morpho-syntactically informed LSTM-CRF model for Named Entity Recognition. Proceedings of Recent Advances in Natural Language Processing (RANLP) 2019, INCOMA Ltd., 2019, ISSN:2603-2813, 1104-1113. SJR:0.143</li>
+                <li>Popov, A., Simov, K., Osenova, P. Know Your Graph. State-of-the-Art Knowledge-Based WSD. Proceedings of Recent Advances in Natural Language Processing 2019, 2019, DOI: <a href="https://doi.org/10.26615/978-954-452-056-4_110">https://doi.org/10.26615/978-954-452-056-4_110</a>, 949-958. SJR (Scopus):0.143</li>
+            </ul>
+            <h3>2018</h3>
+            <ul>
+                <li>Petya Osenova and Kiril Simov 2018: Recent Developments within BulTreeBank. In: Proceedings of the 16th International Workshop on Treebanks and Linguistic Theories (TLT16), pages 129–137, Prague, Czech Republic, January 23–24, 2018.</li>
+                <li>Kiril Simov, Alexander Popov, Iliana Simova and Petya Osenova 2018: Grammatical Role Embeddings for Enhancements of Relation Density in the Princeton WordNet. In: Proceedings of the The 9th Global WordNet Conference, 8–12 January, 2018, Nanyang Technological University (NTU), Singapore.</li>
+                <li>Petya Osenova and Kiril Simov 2018: Modeling multiword expressions in a parallel Bulgarian-English newsmedia corpus. In Manfred Sailer & Stella Markantonatou (eds.), Multiword expressions: Insights from a multi-lingual perspective, 247–269. Berlin: Language Science Press. DOI:10.5281/zenodo.1182603.</li>
+                <li>Kiril Simov, Petya Osenova, Iliana Simova, Hristo Konstantinov and Tenyo Tyankov 2018: A Multilingual Access Module to Legal Texts. In: Ugo Pagallo, Monica Palmirani, Pompeu Casanovas, Giovanni Sartor, Serena Villata (Eds.), AI Approaches to the Complexity of Legal Systems, Lecture Notes in Artificial Intelligence 10791,  Springer, p. 272-286.</li>
+                <li>Petya Osenova 2018: Transferring linguistic information from a constituent-based framework to a dependency-based one. In: Mira Kovatcheva (ed.) Language Close Up. Papers in honour of Christo Stamenov. Sofia University Press, pp. 320-327.</li>
+                <li>Петя Осенова 2018: Лингвистични особености на слуховете. В: Красимира Алексова, Ангел Г. Ангелов, Катя Исса, Цветомира Венкова, Данка Апостолова, Петър Сотиров, Павлина Кънчева, Кирил Цанков (редактори), Обществените процеси и тяхното отражение в езика. Проблеми на социолингвистиката 13, стр. 225-231. ISSN 1314-5401</li>
+                <li>Петя Осенова 2018: Туитовете като предизвикателство пред автоматичната лингвистична обработка. В: Чл.-кор. проф. дфн Стоян Буров (отг. редактор); доц. д-р Анелия Петкова, доц. д-р Владислав Маринов (ред. колегия). Проблеми на устната комуникация 11, стр. 2015-216.  УИ "Св. св. Кирил и Методий", В. Търново. ISSN 2367-8712.</li>
+                <li>Petya Osenova, Kiril Simov 2018: Enriching valency frames lexicon of Bulgarian with Semantic Roles. In: B. Niševa (hl. red.), D. Blažek, I. Krejčířová, K. Skwarska, E. Šlaufová, M. Vašíček, Slovanská lexikografie počátkem 21. století. Sborník z konference Praha 20. – 22. 4. 2016, Slovanský ústav AV ČR, v. v. i., pp. 239-246. ISBN 978-80-86420-65-3            </li>
+            </ul>
+            <h3>2017</h3>
+            <ul>
+                <li>Kiril Simov, Petya Osenova, Alexander Popov 2017: Comparison of Word Embeddings from Different Knowledge Graphs. In: Jorge Gracia, Francis Bond, John P. McCrae, Paul Buitelaar, Christian Chiarcos and Sebastian Hellmann (eds.) Language, Data, and Knowledge, First International Conference, LDK 2017, Galway, Ireland, June 19-20, 2017, Proceedings, pp. 213-221. Springer.</li>
+                <li>Petya Osenova and Kiril Simov 2017: Challenges Behind the Data-driven Bulgarian WordNet (BulTreeBank Bulgarian Wordnet). In: John P. McCrae, Francis Bond, Paul Buitelaar, Philipp Cimiano, Thierry Declerck, Jorge Gracia, Ilan Kernerman, Elena Montiel Ponsoda, Noam Ordan and Maciej Piasecki (eds), Proceedings of the LDK 2017 Workshops: 1st Workshop on the OntoLex Model (OntoLex-2017), Shared Task on Translation Inference Across Dictionaries & Challenges for Wordnets, co-located with 1st Conference on Language, Data and Knowledge (LDK 2017), Galway, Ireland, June 18, 2017, Vol-1899 urn:nbn:de:0074-1899-7, pp.152-163 (<a href="http://ceur-ws.org/Vol-1899/">http://ceur-ws.org/Vol-1899/</a>)(<a href="http://ceur-ws.org/Vol-1899/CfWNs_2017_proc4-paper_3.pdf">http://ceur-ws.org/Vol-1899/CfWNs_2017_proc4-paper_3.pdf</a>)</li>
+                <li>Petya Osenova and Kiril Simov 2017: Bulgarian-English and English-Bulgarian Machine Translation: System Design and Evaluation. In: Galia Angelova, Kalina Bontcheva, Ruslan Mitkov, Ivelina Nikolova, Irina Temnikova (eds.) Proceedings of Recent Advances in Natural Language Processing, pages 561–568, Varna, Bulgaria, Sep 4–6 2017.</li>
+                <li>Kiril Simov, Svetla Boycheva and Petya Osenova 2017: Towards Lexical Chains for Knowledge-Graph-based Word Embeddings. In: Galia Angelova, Kalina Bontcheva, Ruslan Mitkov, Ivelina Nikolova, Irina Temnikova (eds.) Proceedings of Recent Advances in Natural Language Processing, pages 679–685, Varna, Bulgaria, Sep 4–6 2017.</li>
+                <li>Кирил Симов и Петя Осенова 2017: Езикови технологии за дигитална хуманитаристика (приложение върху корпус за културата на даряване за образование). В: Пепка Бояджиева и Росица Стоянова (съст.) Дар и култури на дарителство за образование: теории, институции, личности. Издателство „Изток-Запад”, стр. 437-456.</li>
+                <li>Петя Осенова 2017: Българските електронни граматически ресурси в параметрите на универсалността. В: сп. Проглас, том 26, брой 2, стр. 187-192. (<a href="http://journals.uni-vt.bg/proglas/bul/vol26/iss2/2">http://journals.uni-vt.bg/proglas/bul/vol26/iss2/2</a>)</li>
+            </ul>
+            <h3>2016</h3>
+            <ul>
+                <li>Simov et al. 2016: Kiril Simov, Alexander Popov and Petya Osenova. The Role of the WordNet Relations in the Knowledge-based Word Sense Disambiguation Task. In: Verginica Barbu Mititelu, Corina Forascu, Christiane Fellbaum and Piek Vossen (eds.), Proceedings of the 8th WordNet Conference, Bucharest, 27–30 January 2016, pp. 391–398.</li>
+                <li>Simov et al 2016: Kiril Simov, Alexander Popov and Petya Osenova. Knowledge Graph Extension for Word Sense Annotation. In: Svetozar Margenov, Galia Angelova, Gennady Agre (eds.) Innovative Approaches and Solutions in Advanced Intelligent Systems,Volume 648 of the series Studies in Computational Intelligence pp. 151–166. Springer.</li>
+                <li>Declerck et al. 2016: Thierry Declerck, Petya Osenova, Georgi Georgiev and Piroska Lendvai. Ontological Modelling of Rumours. In: Trandabăţ, Diana, Gîfu, Daniela (eds.) Linguistic Linked Open Data, 2th EUROLAN 2015 Summer School and RUMOUR 2015 Workshop, Sibiu, Romania, July 13-25, 2015, Revised Selected Papers,Volume 588, Communications in Computer and Information Science, pp. 3-17, Springer.</li>
+                <li>Petya Osenova and Kiril Simov 2016: Cross-level Semantic Annotation of Bulgarian Treebank. In: Harry Bunt (editor). Proceedings from ISA-12, 12th Joint ACL - ISO Workshop on Interoperable Semantic Annotation, pp. 16-21. Link: <a href="http://sigsem.uvt.nl/isa12/ISA12proceedings.pdf">http://sigsem.uvt.nl/isa12/ISA12proceedings.pdf</a></li>
+                <li>Otegi et. al 2016: Arantxa Otegi, Nora Aranberri, António Branco, Jan Hajic, Martin Popel, Kiril Simov, Eneko Agirre, Petya Osenova, Rita Pereira, João Silva and Steven Neale 2016: QTLeap WSD/NED Corpora: Semantic Annotation of Parallel Corpora in Six Languages. In: Nicoletta Calzolari (Conference Chair) and Khalid Choukri and Thierry Declerck and Marko Grobelnik and Bente Maegaard and Joseph Mariani and Asuncion Moreno and Jan Odijk and Stelios Piperidis (editors). Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016). 23-28 May, Portorož, Slovenia, pp. 3023-3030. 978-2-9517408-9-1.</li>
+                <li>McCrae 2016: John Philip McCrae and Christian Chiarcos and Francis Bond and Philipp Cimiano and Thierry Declerck and Gerard de Melo and Jorge Gracia and Sebastian Hellmann and Bettina Klimek and Steven Moran and Petya Osenova and Antonio Pareja-Lora and Jonathan Pool 2016: The Open Linguistics Working Group: Developing the Linguistic Linked Open Data Cloud. In: Nicoletta Calzolari (Conference Chair) and Khalid Choukri and Thierry Declerck and Marko Grobelnik and Bente Maegaard and Joseph Mariani and Asuncion Moreno and Jan Odijk and Stelios Piperidis (editors). Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016). 23-28 May, Portorož, Slovenia, pp. 2435-2441. 978-2-9517408-9-1.</li>
+                <li>Rosén 2016: Victoria Rosén, Koenraad De Smedt, Gyri Smørdal Losnegaard, Eduard Bejček, Agata Savary and Petya Osenova 2016: MWEs in Treebanks: From Survey to Guidelines. In: Nicoletta Calzolari (Conference Chair) and Khalid Choukri and Thierry Declerck and Marko Grobelnik and Bente Maegaard and Joseph Mariani and Asuncion Moreno and Jan Odijk and Stelios Piperidis (editors). Proceedings of the Tenth International Conference on Language Resources and Evaluation (LREC 2016). 23-28 May, Portorož, Slovenia, pp. 2323-2330. 978-2-9517408-9-1.</li>
+                <li>Осенова 2016: П. Осенова. Понятието опора: същност и перспективи. Във: Ирен Александрова, Йовка Тишева, Красимира Алексова, Мария Калинова, Николай Чернокожев, Петя Осенова и Ренета Божанкова. Филологическият проект – кризи и перспективи. Сборник доклади от международна научна конференция (24-26 април 2015 г.). Изд. Фабер, стр. 328-339.</li>
+                <li>Gaudio et al. 2016: Gaudio, Rosa, Labaka, Gorka, Agirre, Eneko, Osenova, Petya, Simov, Kiril, Popel, Martin, Oele, Dieke, van Noord, Gertjan, Gomes, Luis, Antonio, Rodrigues, Joao, Neale, Steven, Silva, Joao, Querido, Andreia, Rendeiro, Nuno  and  Branco, Antonio. SMT and Hybrid systems of the QTLeap project in the WMT16 IT-task. In: Proceedings of the First Conference on Machine Translation, Association for Computational Linguistics, August, Berlin, Germany, pp. 435-441 (<a href="http://www.aclweb.org/anthology/W/W16/W16-2332">http://www.aclweb.org/anthology/W/W16/W16-2332</a>).</li>
+                <li>Simov, Osenova and Popov 2016: Kiril Simov, Petya Osenova and Alexander Popov. Using Context Information for Knowledge-Based Word Sense Disambiguation. In: Christo Dichev and Gennady Agre (eds.) Artificial Intelligence: Methodology, Systems, and Applications, Volume 9883 of the series Lecture Notes in Computer Science, pp. 130-139. DOI 10.1007/978-3-319-44748-3_13.</li>
+                <li>Petya Osenova, Stanslava Kancheva, Svetlomira Manova, Ivajlo Radev and Nadezhda Terzijska 2016: Language Resources for Deep Machine Translation. In: Proceedings of the Workshop on Deep Language Processing for Quality Machine Translation (DeepLP4QMT). Publisher: Institute of Information and Communication Technologies, BAS, pp. 14-19. ISBN 978-619-7320-03-9.</li>
+                <li>Laura Tolosi, Valentin Zhikov, Andrej Tagarev, Kiril Simov, Petya Osenova, Gertjan van Noord and Dieke Oele 2016. Machine Translation for Crosslingual Annotation. In: Proceedings of the Workshop on Deep Language Processing for Quality Machine Translation (DeepLP4QMT). Publisher: Institute of Information and Communication Technologies, BAS, pp. 40-44. ISBN 978-619-7320-03-9.</li>
+                <li>Kiril Simov, Petya Osenova and Alexander Popov 2016: Towards Semantic-based Hybrid Machine Translation between Bulgarian and English. In: Deyi Xiong, Kevin Duh, Eneko Agirre, Nora Aranberri and Houfeng Wang (editors), Proceedings of the 2nd Workshop on Semantics-Driven Machine Translation (SedMT 2016), The Association for Computational Linguistics, pp. 22-26 (<a href="https://www.aclweb.org/anthology/W/W16/W16-0604.pdf">https://www.aclweb.org/anthology/W/W16/W16-0604.pdf</a>).</li>
+                <li>Kiril Simov and Petya Osenova 2016: A Hybrid Approach for Deep Machine Translation. In: Proceedings of the 2nd Deep Machine Translation Workshop. Published by: Charles University, Faculty of Mathematics and Physics, Institute of Formal and Applied Linguistics, pp. 21—28 (<a href="http://nlx-server.di.fc.ul.pt/~nlx/online\_deepmt2016/wp-content/uploads/2016/05/dmtw2016.pdf">http://nlx-server.di.fc.ul.pt/~nlx/online\_deepmt2016/wp-content/uploads/2016/05/dmtw2016.pdf</a>)</li>
+                <li>Petya Osenova 2016: Modeling Valence Frames in Bulgarian: Corpus vs. Grammar Approach. In: Диана Благоева и Сия Колковска (съставители), Лексикографията в началото на XXI век. Доклади от Седмата международна конференция по лексикография и лексикология (София, 15-16 октомври 2015 г.). Издателство на БАН „Проф. М. Дринов”, София, стр. 697-704.</li>
+            </ul>
+            <h3>2015</h3>
+            <ul>
+                <li>Simov and Osenova 2015: Kiril Simov and Petya Osenova. Catena Operations for Unified Dependency Analysis. In: Proceedings of the Third International Conference on Dependency Linguistics (Depling 2015), pp. 320–329, Uppsala, Sweden, August 24–26 2015.</li>
+                <li>Simov et al. 2015: Kiril Simov, Iliana Simova, Velislava Todorova, Petya Osenova. Factored Models for Deep Machine Translation. In: Proceedings of the 1st Deep Machine Translation Workshop (DMTW 2015), pp. 97–105, Praha, Czech Republic, 3–4 September 2015.</li>
+                <li>Simov, Popov and Osenova 2015: Kiril Simov, Alexander Popov and Petya Osenova. Improving Word Sense Disambiguation with Linguistic Knowledge from a Sense Annotated Treebank. In: Proceedings of Recent Advances in Natural Language Processing, pp. 596–603, Hissar, Bulgaria, Sep 7–9 2015.</li>
+                <li>Osenova and Simov 2015: Petya Osenova and Kiril Simov. Universalizing BulTreeBank: a Linguistic Tale about Glocalization. In: Proceedings of BSNLP 2015, Hissar, Bulgaria, pp. 81–89.</li>
+                <li>Osenova and Simov 2015: Petya Osenova and Kiril Simov 2015: Modeling Lexicon-Syntax Interaction with Catenae. In: Journal of Cognitive Science, vol. 16/3, pp. 287–322. Seoul National University, College of Humanities. ISSN: 1598-2327.</li>
+                <li>Osenova and Simov 2015: Petya Osenova and Kiril Simov 2015: Semantic Role Annotation in BulTreeBank. In: Markus Dickinson, Erhard Hinrichs Agnieszka Patejuk and Adam Przepiórkowski (eds.) Proceedings of the Fourteenth International Workshop on Treebanks and Linguistic Theories (TLT14), 11–12 December 2015 Warsaw, Poland, pp. 148–156. ISBN: 978-83-63159-18-4.</li>
+                <li>Rosén et al. 2015: Victoria Rosén, Gyri Smørdal Losnegaard, Koenraad De Smedt, Eduard Bejček, Agata Savary, Adam Przepiórkowski, Petya Osenova and Verginica Barbu Mititelu. A Survey of Multiword Expressions in Treebanks. Markus Dickinson, Erhard Hinrichs Agnieszka Patejuk and Adam Przepiórkowski (eds.) Proceedings of the Fourteenth International Workshop on Treebanks and Linguistic Theories (TLT14), 11–12 December 2015 Warsaw, Poland, pp. 179–193.</li>
+                <li>Осенова 2015: Петя Осенова. Размисли върху разколебаването на граматическите норми. В: сп. Език и литература, кн. 3-4, 2015, стр. 94–102.</li>
+            </ul>
+            <h3>2014</h3>
+            <ul>
+                <li>Осенова 2014: Петя Осенова. Славянската памет: Българският език и Граматиката на зависимостите. В: Амелия Личева, Кристина Йорданова, Милена Кирова, Надежда Стоянова, Петя Осенова (съставители) "Езици на паметта в литературния текст", Сборник Доклади от годишната конференция на факултет „Славянски филологии“, СУ „Св. Климент Охридски“, 2013, стр. 548–555, издателство ФАБЕР. Велико Търново. ISBN 978-619-00-0111-9.</li>
+                <li>Simov and Osenova 2014: Kiril Simov and Petya Osenova. Formalizing MultiWords as Catenae in a Treebank and in a Lexicon. In: Verena Henrich, Erhard Hinrichs, Daniël de Kok, Petya Osenova, Adam Przepiórkowski (eds.) Proceedings of the Thirteenth International Workshop on Treebanks and Linguistic Theories (TLT13), December 12-13, 2014, Tübingen, Germany, pp. 198–207. ISBN: 978-3-9809183-9-8.</li>
+                <li>Popov et al. 2014: Alexander Popov, Stanislava Kancheva, Svetlomira Manova, Ivaylo Radev, Kiril Simov and Petya Osenova 2014: The Sense Annotation of BulTreeBank. In: Verena Henrich, Erhard Hinrichs, Daniël de Kok, Petya Osenova, Adam Przepiórkowski (eds.) Proceedings of the Thirteenth International Workshop on Treebanks and Linguistic Theories (TLT13), December 12–13, 2014, Tübingen, Germany, pp. 127–136. ISBN: 978-3-9809183-9-8.</li>
+                <li>Osenova and Simov 2014: Petya Osenova and Kiril Simov. Treatment of Multiword Expressions and Compounds in Bulgarian. In: Verena Henrich and Erhard Hinrichs (eds.) Proceedings of the Workshop on Computational, Cognitive, and Linguistic Approaches to the Analysis of Complex Words and Collocations (CCLCC 2014), pp. 41–46, ESSLLI, Tuebingen, Germany.</li>
+                <li>Simova et al. 2014: Iliana Simova, Dimitar Vasilev, Alexander Popov, Kiril Simov and Petya Osenova. Joint Ensemble Model for POS Tagging and Dependency Parsing. In: Proceedings of the First Joint Workshop on Statistical Parsing of Morphologically Rich Languages and Syntactic Analysis of Non-Canonical Languages, at COLING, Dublin, Ireland, August 23–29 2014, pp. 15–25.</li>
+                <li>Simov et al. 2014: Kiril Simov, Iliana Simova, Ginka Ivanova, Maria Mateva and Petya Osenova. A System for Experiments with Dependency Parsers. In: Nicoletta Calzolari (Conference Chair), Khalid Choukri, Thierry Declerck, Hrafn Loftsson, Bente Maegaard, Joseph Mariani, Asuncion Moreno, Jan Odijk and Stelios Piperidis (eds.) Proceedings of the Ninth International Conference on Language Resources and Evaluation (LREC 2014), 26-31 May, Reykjavik, Iceland, pp. 4061–4065.</li>
+                <li>Ghayoomi et al. 2014: Masood Ghayoomi, Kiril Simov and Petya Osenova. Constituency Parsing of Bulgarian: Word- vs Class-based Parsing. In: Nicoletta Calzolari (Conference Chair), Khalid Choukri, Thierry Declerck, Hrafn Loftsson, Bente Maegaard, Joseph Mariani, Asuncion Moreno, Jan Odijk and Stelios Piperidis (eds.) Proceedings of the Ninth International Conference on Language Resources and Evaluation (LREC 2014), 26-31 May, Reykjavik, Iceland, pp. 4056-4060.</li>
+                <li>Osenova 2014:  Petya Osenova. Classifier noun phrases of the type N1N2 in Bulgarian. In: Olga Spevak (editor) Noun Valency, pp.141–160. John Benjamins Publishing Company.</li>
+                <li>Осенова 2014: Петя Осенова. Електронни ресурси за електронно обучение по български език. В: Таня Ангелова (съставител), Интегриране на електронни форми на обучение в образователния процес по български език. Изд. Парадигма, стр. 64–72.</li>
+            </ul>
+            <h3>2013</h3>
+            <ul>
+                <li>Осенова и Терзийска 2013: Петя Осенова и Надя Терзийска. Някои наблюдения върху мога, искам и трябва в публичната реч на политиците. В: Проблеми на устната комуникация, Книга девета, I, стр. 219–229, Велико Търново.</li>
+                <li>Осенова 2013: Петя Осенова. Нормативност и (не)отклонения в езиковата практика (с оглед на чуждоезиковото обучение). В: Панайот Карагьозов и Юлияна Стоянова (съст.) „Минало, настояще и перспективи на чуждестранната българистика.” УИ „Св. Кл. Охридски”, стр. 218–224.</li>
+                <li>Zhikov et al. 2013: Valentin Zhikov, Georgi Georgiev, Kiril Simov and Petya Osenova. Combining POS tagging, Dependency Parsing and Coreferential Resolution for Bulgarian. In: Galia Angelova, Kalina Boncheva and Ruslan Mitkov (eds) Proceedings of RANLP 2013, pp. 755–762. ISSN 1313-8502.</li>
+                <li>Simov et al. 2013: Kiril Simov, Ginka Ivanova, Maria Mateva and Petya Osenova. Integration of Dependency Parsers for Bulgarian.In: Sandra Kuebler, Petya Osenova and Martin Volk (eds.) Proceedings of the TLT-12, IICT-BAS, pp. 145–156. ISBN: 978-954-91700-6-1.</li>
+            </ul>
+            <h3>2012</h3>
+            <ul>
+                <li>Wang et al. 2012: Rui Wang, Petya Osenova and Kiril Simov. Linguistically-Enriched Models for Bulgarian-to-English Machine Translation. Proceedings of the Sixth Workshop on Syntax, Semantics and Structure in Statistical Translation (SSST-6), ACL 2012 / SIGMT / SIGLEX Workshop, 12 July 2012, Jeju, Korea, pp. 10-19.</li>
+                <li>Simov et al. 2012: Kiril Simov (BAS), Petya Osenova, Laska Laskova, Stanislava Kancheva (Sofia University), Aleksandar Savkov (University of Sussex), Rui Wang (DFKI). HPSG-based Bulgarian-English Statistical Machine Translation. In: Littera et Lingua, Spring 2012 (<a href="http://slav.uni-sofia.bg/lilijournal/index.php/bg/component/content/article/561-cl-2012/715-ksimov2012">http://slav.uni-sofia.bg/lilijournal/index.php/bg/component/content/article/561-cl-2012/715-ksimov2012</a>).</li>
+                <li>Osenova and Simov 2012: Petya Osenova and Kiril Simov. The Political Speech Corpus of Bulgarian. In: Nicoletta Calzolari (Conference Chair) and Khalid Choukri and Thierry Declerck and Mehmet Uğur Doğan and Bente Maegaard and Joseph Mariani and Jan Odijk and Stelios Piperidis (eds.) Proceedings of the Eight International Conference on Language Resources and Evaluation (LREC'12), Istanbul, Turkey. ELRA. 978-2-9517408-7-7.</li>
+                <li>Savkov et al. 2012: Aleksandar Savkov and Laska Laskova and Stanislava Kancheva and Petya Osenova and Kiril Simov. Linguistic Analysis Processing Line for Bulgarian. In: Nicoletta Calzolari (Conference Chair) and Khalid Choukri and Thierry Declerck and Mehmet Uğur Doğan and Bente Maegaard and Joseph Mariani and Jan Odijk and Stelios Piperidis (eds.) Proceedings of the Eight International Conference on Language Resources and Evaluation (LREC'12), Istanbul, Turkey. ELRA. 978-2-9517408-7-7.</li>
+                <li>Osenova et al. 2012: Petya Osenova and Kiril Simov and Laska Laskova and Stanislava Kancheva. A Treebank-driven Creation of an OntoValence Verb lexicon for Bulgarian. In: Nicoletta Calzolari (Conference Chair) and Khalid Choukri and Thierry Declerck and Mehmet Uğur Doğan and Bente Maegaard and Joseph Mariani and Jan Odijk and Stelios Piperidis (eds.) Proceedings of the Eight International Conference on Language Resources and Evaluation (LREC'12), Istanbul, Turkey. ELRA. 978-2-9517408-7-7, pp. 2636–2640.</li>
+                <li>Осенова 2012: Петя Осенова. Как говори политикът в Парламента и по време на интервю. В: Миланов, Вл. и Сталянова-Михайлова, Н. (съст.) Езикови портрети на български политици. Част първа. УИ „Св. Кл. Охридски”, стр. 55–61.</li>
+                <li>Wang, Osenova and Simov 2012: Rui Wang, Petya Osenova and Kiril Simov. Linguistically-Augmented Bulgarian-to-English Statistical Machine Translation Model. In: Proceedings of Joint Workshop on Exploiting Synergies between Information Retrieval and Machine Translation (ESIRMT) And Hybrid Approaches to Machine Translation (HyTra) at EACL-2012. ACL, ISBN 978-1-937284-19-0, pp. 119–128.</li>
+                <li>Simov and Osenova 2012: Kiril Simov and Petya Osenova. Bulgarian-English Treebank: Design and Implementation. In: Linguistic Issues in Language Technology, vol. 7, issue 14, 2012 (<a href="http://elanguage.net/journals/index.php/lilt/article/view/2696/2725">http://elanguage.net/journals/index.php/lilt/article/view/2696/2725</a>)</li>
+                <li>Monachesi et al. 2012: Paola Monachesi, Thomas Markus, Eline Westerhout, Petya Osenova, and Kiril Simov. Supporting Formal and Informal Learning through Domain Ontologies . In: International Journal of e-Education, e-Business, e-Management and e-Learning, vol. 2, no. 2, pp. 117–121.</li>
+                <li>Симов и Осенова 2012: Кирил Симов и Петя Осенова. Инфраструктура за български езикови ресурси и технологии. В: Мария Стамболиева (съст.) Компютърна лингвистика. Проблеми и перспективи, кн. 1, АНАБЕЛА, стр. 198–220. ISSN 1314-6823.</li>
+                <li>Осенова 2012: Петя Осенова. Синтаксисът на думите. В: Сб. „Магията на думите”, Езиковедски изследвания в чест на проф. д.ф.н. Лилия Крумова-Цветкова. Академично издателство „проф. Марин Дринов”, стр. 280–286, София, ISBN 978-954-322-521-7.</li>
+                <li>Dan Flickinger et al. 2012: Dan Flickinger, Valia Kordoni, Yi Zhang, Antonio Branco, Kiril Simov, Petya Osenova, Catarina Carvalheiro, Francisco Costa, Sergio Castro. ParDeepBank: Multiple Parallel Deep Treebanking. In Iris Hendrickx, Sandra Kuebler and Kiril Simov (eds.) Proceedings of the 11th International Workshop on Treebanks and Linguistic Theories (TLT11), Lisbon, Portugal. Edicoes Colibri, pp. 97–108. ISBN 978-989-689-274-6.</li>
+                <li>Georgi Georgiev, Valentin Zhikov, Kiril Simov, Petya Osenova and Preslav Nakov 2012: Feature-Rich Part-of-speech Tagging for Morphologically Complex Languages: Application to Bulgarian. In: Proceedings of the 13th Conference of the European Chapter of the Association for Computational Linguistics, April 23–27, 2012, Avignon France pp. 492–502.</li>
+                <li>Осенова 2012: Петя Осенова. Семантично моделиране на българските части на речта в Опорната фразова граматика. В: Бурова, Ани, Иванова, Диана, Христова, Елена, Димитрова, Славея, Аврамова, Цветанка. Време и история в славянските езици, литератури и култури. Сборник с доклади от 11-те национални славистични четения 19–21 април, 2012. Том 1. Езикознание. УИ „Св. Кл. Охридски”, стр. 35–41.</li>
+            </ul>
+            <h3>2011</h3>
+            <ul>
+                <li>Осенова 2011(a): Петя Осенова. Представянето на синтаксиса в средното училище и в университета. В: Littera et lingua (електронно списание), есен 2011 (<a href="http://www.slav.uni-sofia.bg/naum/lilijournal/2011/8/3/osenovap">http://www.slav.uni-sofia.bg/naum/lilijournal/2011/8/3/osenovap</a>).</li>
+                <li>Осенова 2011(б): Петя Осенова. Видове морфологични многозначности в българския език. В: Красимира Алексова, Венче Попова и Тодор Бояджиев (съст.) Сборник „Научни трудове в памет на Георги Герджиков”, УИ „Св. Кл. Охридски”, стр. 223–230.</li>
+                <li>Osenova 2011: Petya Osenova. Bulgarian. In: The Languages of the new EU Member States, Revue Belge de Pholologie et D’Historie, Fasc. 3: Languages et Litteratures Modernes, pp. 643–668.</li>
+                <li>Savkov, Laskova, Osenova, Simov and Kancheva 2011. A. Savkov, L. Laskova, P. Osenova, K. Simov and S. Kancheva. A Web-based Morphological Tagger for Bulgarian. In: D. Majchrakova and R. Garabik (eds.) Proceedings of the 6th International Conference, Modra, Slovakia, 20–21 October, Natural Language Processing, Multilinguality. Tribun,EU, pp. 126–137.</li>
+                <li>Osenova 2011: Petya Osenova. Localizing a Core HPSG-based Grammar for Bulgarian. In: Hanna Hedeland, Thomas Schmidt, Kai Worner (eds.) Multilingual Resources and Multilingual Applications, Proceedings of GSCL 2011, ISSN 0176-599X,  Hamburg, pp. 175–180.</li>
+                <li>Simov and Osenova 2011: Kiril Simov and Petya Osenova. Towards Minimal Recursion Semantics over Bulgarian Dependency Parsing. In Proceedings of Recent Advances in Natural Language Processing, pages 471–478. Hissar, Bulgaria, 12–14 September 2011.</li>
+                <li>Simov et al. 2011: Kiril Simov, Petya Osenova, Laska Laskova, Aleksandar Savkov and Stanislava Kancheva. Bulgarian-English Parallel Treebank: Word and Semantic Level Alignment. In Proceedings of the Second AEPC Workshop, 15.09.2011, at RANLP 2011, ISBN 978-954-452-021-2, pp. 29–38.…..</li>
+                <li>Staykova et al. 2011: Kamenka Staykova, Gennady Agre, Kiril Simov and Petya Osenova. Language Technology Support for Semantic Annotation of Iconographic Descriptions. In: Proceedings of the Workshop on Language Technologies for Digital Humanities and Cultural Heritage, 16.09.2011, at RANLP 2011, ISBN 978-954-452-019-9, pp. 51–56.</li>
+                <li>Giouli, Simov and Osenova 2011: Voula Giouli, Kiril Simov and Petya Osenova. A Parallel Greek-Bulgarian Corpus: A Digital Resource of the Shared Cultural Heritage. In: Sporleder, C., Van den Bosch, A., Zervanou, K. (eds.) Language Technology for Cultural Heritage (selected papers from the LaTeCH Workshop Series), Springer, pp. 99–112.</li>
+                <li>Osenova and Simov 2011: Petya Osenova and Kiril Simov. Syntactic-Semantic Treebank for Domain Ontology Creation. In: Cognitive Studies, vol. 11, Warsaw, pp. 213–225.</li>
+                <li>Осенова и Симов 2011: Петя Осенова и Кирил Симов. Корпусен поглед към политическата реч. В: Вл. Миланов и Н. Михайлова, съст., сб „Език, морал, отговорност”. УИ „Св. Кл. Охридски”, стр. 77-87.</li>
+            </ul>
+            <h3>2010</h3>
+            <ul>
+                <li>Осенова 2010: Петя Осенова. Въпроси и отговори. В: сп. „Език и литература”,  кн. 3–4, стр. 38–43.</li>
+                <li>Heeringa, Nerbonne and Osenova 2010: Wilbert Heeringa, John Nerbonne and Petya Osenova. Detecting contact effects in pronunciation. In: Muriel Norde, Bob de Jonge and C. Hasselblatt (eds.), Language Contact. New perspectives, John Benjamins Publishing Company, pp. 131–154.</li>
+                <li>Diana Santos et al. 2010: Diana Santos, Luís Miguel Cabral, Corina Forascu, Pamela Forner, Fredric Gey, Katrin Lamm, Thomas Mandl, Petya Osenova, Anselmo Peñas, Álvaro Rodrigo, Julia Schulz, Yvonne Skalban and Erik Tjong Kim Sang. GikiCLEF: Crosscultural Issues in Multilingual Information Access. In: Proceedings of the Seventh conference on International Language Resources and Evaluation (LREC'10), pp. 2346–2353.</li>
+                <li>Osenova et al. 2010: Petya Osenova, Laska Laskova, Kiril Simov. Exploring Co-Reference Chains for Concept Annotation of Domain Texts. In: Proceedings from LREC 2010, Malta, pp. 172–176.</li>
+                <li>Simov and Osenova 2010: Kiril Simov and Petya Osenova. Constructing of an Ontology based Lexicon for Bulgarian. In: Proceedings from LREC 2010, Malta, pp. 3840–3844.</li>
+                <li>Osenova and Simov 2010: Petya Osenova and Kiril Simov. Semantic Annotation for Semi-Automatic Positioning of the Learner. In: Proceedings of the First Workshop on Supporting eLearning with Language Resources and Semantic Data, at LREC 2010, Malta, pp. 46–50.</li>
+                <li>Osenova and Simov 2010: Petya Osenova and Kiril Simov. Using the Linguistic Knowledge in BulTreeBank for the Selection of the Correct Parses. In: M. Dickinson, K. Muurisep and M. Passarotti (eds), Proceedings of the Ninth International Workshop on Treebanks and Linguistic Theories (TLT), 3–4 December 2010. NEALT Proceeding Series, Vol. 9, pp. 163–174.</li>
+                <li>Osenova et al. 2010: Petya Osenova, Wilbert Heeringa and John Nerbonne. A Quantative Analysis of Bulgarian Dialect Pronunciation. In: Zeitschrift fuer Slavische Philologie. Band 66, Heft 2, 2010, pp. 425-458, Universitatetsverlag WINTER Heidelberg.</li>
+            </ul>
+            <h3>2009</h3>
+            <ul>
+                <li>Simov and Osenova 2009: Kiril Simov and Petya Osenova. Syntactic-Semantic Treebank for Domain Ontology Creation. In: Proceedings from the MONDILEX Workshop on Representing Semantics in Digital Lexicography, 29 June – 1 July, Warsaw, Poland, pp. 115–122.</li>
+                <li>Osenova 2009: Petya Osenova. On the Lexicographic Representation of Relational Nouns. In: Proceedings from the MONDILEX Workshop on Representing Semantics in Digital Lexicography, 29 June-1 July, Warsaw, Poland, pp. 205–210.</li>
+                <li>Georgiev et al. 2009: Georgi Georgiev, Preslav Nakov, Petya Osenova and Kiril Simov. Cross-lingual Adaptation as a Baseline: Adapting Maximum Entropy Models to Bulgarian. In: Proceedings from the Workshop on Adaptation of Language Resources and Technology to New Domains, 17 Sept., at RANLP 2009, Borovets, pp. 35–38.</li>
+                <li>Georgiev et al. 2009: Georgi Georgiev, Preslav Nakov, Kuzman Ganchev, Petya Osenova,  and Kiril Simov. Feature-Rich Named Entity Recognition for Bulgarian Using Conditional Random Fields. In: Proceedings of the International Conference RANLP-2009, RANLP 2009, Borovets, pp. 113–117.</li>
+                <li>Миланов и Осенова 2009: Вл. Миланов и П. Осенова. Словоредът на модификаторите в именната фраза през първата четвърт на 19. Век. В: К. Вачкова, И. Савова, Д. Даскалова, В. Попова и Кр. Колева (редактори) Сборник „Отговорността през езика”, книга 2, УИ „Епископ Константин Преславски”, стр. 72–78.</li>
+            </ul>
+            <h3>2005-2008</h3>
+            <ul>
+                <li>Осенова 2008: Петя Осенова. Въпросът за опората и депендентите в българските атрибутивни именни групи от гледна точка на Опорната фразова граматика. В: Bulgaristica - Studia et Argumenta. Festschrift für Ruselina Nitsolova zum 65. Geburtstag. (Hg. Sigrun Comati) SPECIMINA  PHILOLOGIAE  SLAVICAE, Band 151, Verlag Otto Sagner München, pp. 261–271.</li>
+                <li>Simov and Osenova 2008: Kiril Simov and Petya Osenova. Bulgarian Language Resources for Information Technology. In L. Iomdin and L. Dimitrova (eds.): Lexicographic tools and techniques, Proceedings from MONDILEX 1st Open workshop, 3–4 October, 2008, pp. 60–67.</li>
+                <li>Simov and Osenova 2008: Kiril Simov and Petya Osenova. A Treatment of Coordination in the Bulgarian HPSG-based Treebank. In: Proc. of FDSL 5, Peter Lang, pp. 68–77.</li>
+                <li>Simov and Osenova 2008: Kiril Simov and Petya Osenova. Language Resources and Tools for Ontology-Based Semantic Annotation. OntoLex 2008 Workshop at LREC 2008, pp. 9–13.</li>
+                <li>Osenova et al. 2008: Petya Osenova, Kiril Simov, Eelco Mossel. Language Resources for Semantic Document Annotation and Crosslingual Retrieval. In: Proc. of LREC 2008, ELRA.</li>
+                <li>Симов и др. 2008: Кирил Симов, Петя Осенова и Светломира Видинска. Избор на словник и изработване на правописен речник на българския език на базата на корпуса BulTreeBank. В: Изследвания по фразеология, лексикология и лексикография. В памет на проф. дфн Кети Анкова-Ничева, стр. 407–414.</li>
+                <li>Chanev et al. 2007: Atanas Chanev, Kiril Simov, Petya Osenova and Svetoslav Marinov. The BulTreeBank: Parsing and Conversion. In: Galia Angelova et. al (eds.) Proceedings from RANLP 2007, pp. 114–120.</li>
+                <li>Przepiórkowski et al. 2007: Adam Przepiórkowski, Lukasz Degórski, Miroslav Spousta, Kiril Simov, Petya Osenova, Lothar Lemnitzer, Vladislav Kubon, Beata Wójtowicz. Towards the automatic extraction of definitions in Slavic. In the Proceedings of the BSNLP workshop at ACL 2007, pp. 43–50.</li>
+                <li>Osenova and Simov 2007: Petya Osenova and Kiril Simov. An Infrastructure for Storing and Processing Dialect Data. В: Българските острови на Балканите, издателство Фигура, 2007, стр. 256–263.</li>
+                <li>Simov et al. 2007: Kiril Simov, Petya Osenova, Alexander Simov, Anelia Tincheva, Borislav Kirilov. A System for A Semi-Automatic Ontology Annotation. In: Proceedings from the International Workshop on Computer-Aided Language Processing (CALP), K. Orasan and S. Kubler, eds., RANLP 2007, 30 Sept. 2007, pp. 45–52.</li>
+                <li>Simov and Osenova 2007: Kiril Simov and Petya Osenova. Applying Ontology-Based Lexicons to the Semantic Annotation of Learning Objects. In: Proceedings from the Workshop on NLP and Knowledge Representation for eLearning Environments, RANLP-2007, pp. 49–55.</li>
+                <li>Simov and Osenova 2007: Kiril Simov and Petya Osenova. Applying a normalized compression metric to the measurement of dialect distance. In: Serdica Journal of Computing 1, pp. 73–86.</li>
+                <li>Simov and Osenova 2006: Kiril Simov and Petya Osenova. Ontology-based Lexicon and Semantic Annotation. In: Proceedings of International Workshop "Ontology Based Modeling in the Humanities", Hamburg, Germany, 2006, pp. 67–71.</li>
+                <li>Magnini 2006: Bernardo Magnini, Danilo Giampiccolo, Pamela Forner, Christelle Ayache, Valentin Jikoun, Petya Osenova, Anselmo Penas, Paulo Rocha, Bogdan Sacaleanu, and Richard Sutcliffe. Overview of the CLEF 2006 Multilingual Question Answering Track. In: Evaluation of Multilingual and Multi-modal Information Retrieval, Springer, pp. 223–256.</li>
+                <li>Simov and Osenova 2006: Kiril Simov and Petya Osenova. Shallow Semantic Annotation of Bulgarian: In: Proceedings of the Fifth International Conference on Language Resources and Evaluation LREC 2006, Genoa, Italy, pp. 2347–2352.</li>
+                <li>Osenova and Simov 2006: Petya Osenova and Kiril Simov. Special Linguistic Phenomena in the Bulgarian HPSG-based Treebank (BulTreeBank). In abstract proceedings of the 13th International Conference on Head-Driven Phrase Structure Grammar, Varna, Bulgaria, 2006, pp. 176–182.</li>
+                <li>Simov and Osenova 2006: Kiril Simov and Petya Osenova. Semantic Annotation in Bulgarian Treebank. In: Slavcheva, M. Angelova, G., Simov, K. (Eds.) Readings in Multilinguality, INCOMA Ltd., Shoumen, Bulgaria, ISBN-10: 954-91743-6-0, ISBN-13: 978-954-91743-6-6, pp. 109–116.</li>
+                <li>Osenova 2006: Petya Osenova. A Corpus-Based approach to Free Relatives with “който” in Bulgarian. In: Proceedings from FASSBL 2006, Sofia, pp.109–112.</li>
+                <li>Осенова 2006: Петя Осенова. Българските езикови технологии в електронното обучение. В: сп. Език и литература, кн. 1–2, стр. 172–179.</li>
+                <li>Simov and Osenova 2005: Kiril Simov and Petya Osenova. Infrastructure for Bulgarian Question Answering: Implications for the Language Resources and Tools. In: Proceedings of Language and Speech Infrastructure for Information Access in the Balkan Countries, S. Piperidis and E. Paskaleva, eds., RANLP, Borovets, 25 Sept., INCOMA Ltd., Shoumen, Bulgaria, ISBN 954-91743-2-8, pp. 47–52.</li>
+                <li>Simov et al. 2005: Kiril Simov, Petya Osenova, Alexander Simov and Milen Kouylekov. Design and Implementation of the Bulgarian HPSG-based Treebank. In Erhard Hinrichs and Kiril Simov, editors, Journal of Research on Language and Computation, Special Issue, Springer, 2005, pp. 495–522.</li>
+                <li>Osenova et al. 2005: Petya Osenova, Alexander Simov, Kiril Simov, Hristo Tanev and Milen Kouylekov. Bulgarian-English Question Answering: Adaptation of Language Resources. In: Carol Peters et al. (eds.) Multilingual Information Access for Text, Speech and Images. Revised selected papers from the 5th Workshop of the CLEF, Bath, UK, 2004 Working Notes for the CLEF 2004 Workshop, Bath, UK, pp. 343-351. Springer, pp. 458–469.</li>
+                <li>Осенова и Симов 2005: Петя Осенова и Кирил Симов. Моделиране на лингвистичните явления в синтактично анотиран корпус. В: Аргументна структура. Проблеми на простото и сложното изречение. СЕМАРШ, София, стр. 259–269.</li>
+                <li>Аврамова и Осенова 2005: Цветанка Аврамова и Петя Осенова. Отново по въпроса за границата между сложна дума и словосъчетание (Върху материал от най-новата българска лексика). В: Littera scripta manet. Сборник в чест на 65-годишнината на проф. дфн Василка Радева. Университетско издателство “Св. Кл. Охридски”, стр. 346–358.</li>
+            </ul>
+            <h3>2001-2004</h3>
+            <ul>
+                <li>Simov and Osenova 2004: Kiril Simov and Petya Osenova. A Treebank-Driven Approach to Semantic Lexicons Creation. In: Proceeding. of The Third Workshop on Treebanks and Linguistic Theories (TLT2004), Tuebingen, Germany, pp. 191–196.</li>
+                <li>Simov and Osenova 2004: Kiril Simov and Petya Osenova. A Hybrid Strategy for Regular Grammar Parsing. In: Proceedings of LREC 2004, Lisbon, Portugal. 2004, pp. 431–434.</li>
+                <li>Simov et. Al 2004: Kiril Simov, Petya Osenova, Sia Kolkovska, Elisaveta Balabanova, Dimitar Doikoff. A Language Resources Infrastructure for Bulgarian. In: Proceedings of LREC 2004, Lisbon, Portugal,  pp. 1685–1688.</li>
+                <li>Bekavac et al. 2004: Bozho Bekavac, Petya Osenova, Kiril Simov, Marko Tadic. Making Monolingual Corpora Comparable: a Case Study of Bulgarian and Croatian. In: Proceedings of LREC 2004, Lisbon, Portugal. 2004. pp. 1187–1190.</li>
+                <li>Simov et al. 2004: Kiril Simov, Petya Osenova, Alexander Simov, Krasimira Ivanova, Ilko Grigorov, Hristo Ganev. Creation of a Tagged Corpus for Less-Processed Languages with CLaRK System. In: Proceedings of SALTMIL Workshop at LREC 2004: First Steps in Language Documentation for Minority Languages, Lisbon, Portugal, pp. 80–83.</li>
+                <li>Осенова 2004: Петя Осенова. Синтактични конструкции със съчинително съкращаване в българския език. В: Сб. „Проблеми на българската разговорна реч”, книга шеста, Велико Търново, с. 193–200.</li>
+                <li>Осенова и Симов 2003: Петя Осенова и Кирил Симов. Формално описание на българските звателни форми в рамките на Опорната фразова граматика (HPSG). Доклади от шестите национални славистични четения: Славистиката в началото на XXI век. Традиции и очаквания. Издателство СЕМА РШ. София. 2003, стр. 259–268.</li>
+                <li>Осенова 2003: Петя Осенова. Именни групи от типа NN в българския език. Шести национални славистични четения: Славистиката в началото на XXI век. Традиции и очаквания. София, 26–27. 04. 2002 г.</li>
+                <li>Osenova 2003: Petya Osenova. Petya Osenova. On Subject-Verb Agreement in Bulgarian (An HPSG-based account). In: P. Kosta, J. Blaszak, J. Frasek, L. Geist and M. Zygis (eds.) Investigations into Formal Slavic Linguistics, Peter Lang, pp. 661–672.</li>
+                <li>Simov et al. 2003: Kiril Simov, Petya Osenova, Sia Kolkovska, Elisaveta Balabanova, Dimitar Doikoff. Language resources and tools for the creation of a Bulgarian Treebank. In: Workshop on Balkan Language Resources and Tools, 21 November 2003, Thessaloniki, Greece (satellite event to the Balkan Conference on Informatics - BCI 2003).</li>
+                <li>Osenova and Simov 2003:  Petya Osenova and Kiril Simov. The Bulgarian HPSG Treebank: Specialization of the Annotation Scheme. In: Proc. of The Second Workshop on Treebanks and Linguistic Theories (TLT2003), 14–15 November 2003, Vaexjoe, Sweden, pp. 129–140.</li>
+                <li>Osenova and Simov 2003: Petya Osenova and Kiril Simov. Between Chunk Ideology and Full Parsing Needs In: Proceedings of the Shallow Processing of Large Corpora (SProLaC 2003) Workshop, Lancaster, UK, pp. 78–87.</li>
+                <li>Petrova et al. 2003: Krasimira Petrova, Krasimira Aleksova and Petya Osenova. An Overview of Electronic Resources and Tools for Slavic Languages. In: Proceedings of the Electronic Description and Edition of Slavic Sources conference, 24–25 Sept., 2002, Pomorie, Bulgaria, pp. 21–35.</li>
+                <li>Попов и др. 2003: Димитър Попов, Кирил Симов, Светломира Видинска, Петя Осенова. Правописен речник на българския език. Издателство Наука и изкуство. София. 2003, 808 страници.</li>
+                <li>Simov et al. 2002: Kiril Simov, Gergana Popova, Petya Osenova. HPSG-based syntactic treebank of Bulgarian (BulTreeBank). In: A Rainbow of Corpora: Corpus Linguistics and the Languages of the World, edited by Andrew Wilson, Paul Rayson, and Tony McEnery; Lincom-Europa, Munich, pp. 135–142</li>
+                <li>Osenova and Simov 2002: Petya Osenova and Kiril Simov. Learning a token classification from a large corpus. (A case study in abbreviations). In: Proc. of the ESSLLI Workshop on Machine Learning Approaches in Computational Linguistics, Trento, Italy. August 5–16, pp. 16–28.</li>
+                <li>Simov et al. 2002: Kiril Simov, Petya Osenova, Milena Slavcheva, Sia Kolkovska, Elisaveta Balabanova, Dimitar Doikoff, Krassimira Ivanova, Alexander Simov, Milen Kouylekov. Building a Linguistically Interpreted Corpus of Bulgarian: the BulTreeBank. In: Proceedings of LREC 2002, Canary Islands, Spain, pp. 1729–1736.</li>
+                <li>Osenova 2002: Petya Osenova. Bulgarian Nominal Chunks and Mapping Strategies for Deeper Syntactic Analyses. In: Proc. of The First Workshop on Treebanks and Linguistic Theories (TLT2002), 20th and 21st September 2002, Sozopol, Bulgaria. pages 150–166.</li>
+                <li>Осенова 2002: Петя Осенова. Семантика и прагматика на българските неопределителни местоимения. София: Сема РШ.</li>
+                <li>Осенова 2001: Петя Осенова. За правописа на форми от типа „МВР-шеф”. В: Сб. Проблеми на българския правопис и правоговор, Университетско издателство „Св. св. Кирил и Методий”, Велико Търново, 2001, с. 139–146.</li>
+                <li>Simov and Osenova 2001: Kiril Simov and Petya Osenova. A Hybrid System for MorphoSyntactic Disambiguation in Bulgarian. In: Proc. of the RANLP 2001 Conference, Tzigov Chark, Bulgaria, 5–7 September 2001, pp. 288–290.</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="section">
+            <h1>Contact</h1>
+            <p>Email: petya@bultreebank.org</p>
+        </div>
+        <span id="last_updated">
+            Last updated: 03.2026
+        </span>
+    </div>
+</div>
+
+<script>
+function showSection(sectionId) {
+    var sections = document.querySelectorAll(".section");
+    sections.forEach(function(section) {
+        section.classList.remove("active");
+    });
+
+    document.getElementById(sectionId).classList.add("active");
+}
+</script>
+
+</body>
+</html>
